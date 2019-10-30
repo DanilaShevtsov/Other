@@ -1,0 +1,46 @@
+#include <iostream>
+#include <fstream>
+#include <Windows.h>
+#include <string>
+#include <cstdio>
+using namespace std;
+
+struct struc {
+	char* name[100];
+	char *family[20];
+	char *otchestvo[20];
+	char *usluga[40];
+	char *time[6];
+};
+
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	char* buff[100];
+
+	struc client;
+	string path = "Open.txt";
+	ifstream fin;
+	fin.open(path);
+	ofstream out("Write down.txt");
+	if (fin.is_open())
+	{
+
+		string s;
+		
+
+		fin >> s; fin >> s; fin >> s; fin >> s;
+		if (s == "услуга") {
+			fin.getline;
+		}
+			
+
+	
+	}
+	else {
+		cout << "error";
+	}
+	out.close();
+	fin.close();
+	return 0;
+}
