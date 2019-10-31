@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n, min, max, sum = 0, j = 0;
+	cin >> n;
+	int* arr = new int[n];
+
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	min = arr[0]; max = arr[0];
+	for (int i = 0; i < n; i++) {
+		if (max > arr[i])
+			max = arr[i];
+		if (min < arr[i])
+			min = arr[i];
+	}
+	for (int i = 0; i < n; i++) {
+		if ((arr[i] != max) and (arr[i] != min)) {
+			sum += arr[i];
+			++j;
+		}
+	}
+	cout << endl << sum / j;
+}
