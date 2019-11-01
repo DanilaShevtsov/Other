@@ -1,0 +1,34 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+void in(int n, int* arr) {
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+}
+int* swtch(int n, int* arr) {
+	int m;
+	m = arr[0];
+	arr[0] = arr[n - 1];
+	arr[n - 1] = m;
+	return arr;
+};
+
+void out (int n, int* arr) {
+	for (int i = 0; i < n; i++) {
+		cout << arr[i];
+	}
+};
+
+int main() {
+	int n;
+	cin >> n;
+	int* arr = new int[n];
+	
+	in(n, arr);
+
+	swtch(n, arr);
+
+	out(n, arr);
+}
