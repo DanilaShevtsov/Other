@@ -1,0 +1,50 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+class Toch {
+	private: 
+		int x, y;
+	public:
+		void in() {
+			cin >> x >> y;
+		}
+		int prov1() {
+			if ((x == 0) && (y == 0)) {
+				return 1;
+			}
+			return 0;
+		}
+		int retx() {
+			return x;
+		}
+		int rety() {
+			return y;
+		}
+
+};
+
+class myclass : public Toch {
+public:
+	int f1(Toch* t3) {
+		if (t3->retx() == t3->rety())
+			return 1;
+		return 0;
+	}
+};
+int main() {
+	/*Toch t1;
+	t1.in();
+	cout << t1.prov1() << endl << sizeof t1;
+
+	Toch* t1 = new Toch;
+	t1->in();
+	cout << t1->prov1() << endl;
+	delete t1;
+	cout << sizeof t1;*/
+
+	myclass t1, t2;
+	t1.in();
+	t2.in();
+	t1.f1(&t2);
+}
