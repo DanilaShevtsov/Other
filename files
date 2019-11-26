@@ -1,0 +1,14 @@
+#include "pch.h"
+#include <iostream> 
+#include <stdio.h> 
+int main()
+{
+	FILE* file;
+	int y;
+	char l[25];
+	printf("Year and lastname: ");
+	scanf_s("%d %s", &y, l, 20);
+	fopen_s(&file, "text.txt", "w");
+	fprintf(file, "%d %s", y, l);
+	fclose(file);
+}
