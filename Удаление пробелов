@@ -1,21 +1,25 @@
 #include <iostream>
-#include <stdio.h>
+#include <Windows.h>
+using namespace std;
 
-int main()
-{
-	int n = 0, i = 0;
-	char str[200];
-	 
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	char sogl[30] = {'й', 'ц', 'к', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'ф', 'в', 'п', 'р', 'л', 'д', 'ж', 'ч', 'с', 'м', 'т', 'ь', 'б'}, str[1000]; int i = 0, x = 0;
 	gets_s(str);
+
 	while (str[i] != '\0') {
-		if ((str[i] != ' ') && (str[i] != '	')) {
-			printf("%c", str[i]);
-			i++;
+		if ((str[i] == ' ') || (str[i] == '\0')) {
+			for (int j = 0; j < 30; j++) {
+				if (str[i - 1] == sogl[j]) {
+					for (x; x < i; x++)
+						printf("%c", str[x]);
+				}
+
+			}
+			printf(" ");
+			x = i + 1;
 		}
-		else {
-			n++;
-			i++;
-		}
+		i++;
 	}
-	printf("\n%d", n);
 }
